@@ -1,0 +1,277 @@
+/* =========================
+   IntelliChat — Oceanic One UI
+   Palette:
+     - Deep Navy:      #07192B
+     - Indigo Ocean:   #0A67FF
+     - Teal Accent:    #2BC7D9
+     - Soft Cyan:      #E6F9FF
+     - Pale Surface:   #F4FBFF
+     - Muted Text:     #B7C9DC
+     - Strong Text:    #EAF6FF / #0B1726 (dark)
+   ========================= */
+
+/* ---------- Global & root ---------- */
+.root {
+    -fx-font-family: "Poppins", "Inter", "System";
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #F4FBFF, #E8F7FF);
+    -fx-base-color: #0A67FF; /* helper name (for your reading) */
+}
+
+/* main container (we toggle dark-mode by adding class to this node) */
+#mainContainer {
+    -fx-padding: 0;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar-box {
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, rgba(10,103,255,0.07), rgba(43,199,217,0.03));
+    -fx-background-radius: 0 18 18 0;
+    -fx-padding: 20 12 20 14;
+    -fx-border-color: rgba(10,103,255,0.06);
+    -fx-border-width: 0 1 0 0;
+}
+
+.sidebar-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #08253F; /* deep navy text */
+    -fx-padding: 2 0 10 0;
+}
+
+/* bubble style for sidebar buttons (oceanic bubble) */
+.sidebar-bubble {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, rgba(255,255,255,0.82), rgba(245,252,255,0.92));
+    -fx-background-radius: 16;
+    -fx-padding: 8 14;
+    -fx-spacing: 10;
+    -fx-alignment: CENTER_LEFT;
+    -fx-effect: dropshadow(gaussian, rgba(5,40,90,0.06), 10, 0, 0, 4);
+    -fx-cursor: hand;
+}
+
+.sidebar-bubble:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, rgba(10,103,255,0.10), rgba(10,103,255,0.04));
+    -fx-translate-x: 3;
+}
+
+.sidebar-icon {
+    -fx-font-size: 16px;
+    -fx-padding: 0 10 0 0;
+    -fx-text-fill: #0A67FF;
+}
+
+.sidebar-label {
+    -fx-text-fill: #0B2A44;
+    -fx-font-weight: 700;
+}
+
+/* small footer */
+.sidebar-footer {
+    -fx-text-fill: #98AFC5;
+    -fx-padding: 10 0 4 0;
+    -fx-font-size: 12px;
+}
+
+/* ---------- Chat panel (main surface) ---------- */
+.chat-panel {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, rgba(255,255,255,0.94), rgba(245,251,255,0.96));
+    -fx-background-radius: 20;
+    -fx-padding: 14;
+    -fx-effect: dropshadow(gaussian, rgba(5,20,50,0.06), 16, 0, 0, 6);
+}
+
+/* content column - removed fixed width to allow resizing */
+.content-column {
+    -fx-padding: 18;
+    -fx-alignment: TOP_CENTER;
+}
+
+/* ---------- History panel ---------- */
+.history-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #08253F;
+    -fx-padding: 6 0 10 6;
+}
+
+.history-item {
+    -fx-background-color: rgba(230,246,255,0.8);
+    -fx-background-radius: 12;
+    -fx-text-fill: #08253F;
+    -fx-padding: 10;
+}
+
+/* ---------- Bubbles (user & bot) ---------- */
+.bubble-user {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #2BC7D9, #0A67FF);
+    -fx-text-fill: white;
+    -fx-padding: 10 14;
+    -fx-background-radius: 18 18 4 18;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(10,90,200,0.14), 8, 0, 0, 4);
+    -fx-wrap-text: true;
+}
+
+.bubble-bot {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, rgba(235,249,255,1), rgba(220,245,255,1));
+    -fx-text-fill: #072038;
+    -fx-padding: 10 14;
+    -fx-background-radius: 18 18 18 4;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+/* small avatar bubble (if you use) */
+.avatar-small {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #0A67FF, #2BC7D9);
+    -fx-background-radius: 12;
+    -fx-pref-width: 36;
+    -fx-pref-height: 36;
+    -fx-alignment: center;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+}
+
+/* Timestamp under bubble */
+.timestamp {
+    -fx-font-size: 11px;
+    -fx-text-fill: #9BB0C8;
+    -fx-padding: 4 0 0 0;
+}
+
+/* ---------- Input & Send ---------- */
+.text-field {
+    -fx-background-color: rgba(235,248,255,0.92);
+    -fx-background-radius: 26;
+    -fx-font-size: 14px;
+    -fx-padding: 10 14;
+    -fx-border-color: transparent;
+    -fx-focus-color: rgba(10,103,255,0.25);
+    -fx-faint-focus-color: rgba(10,103,255,0.12);
+}
+
+.send-button {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #0A67FF, #0A56E6);
+    -fx-text-fill: white;
+    -fx-font-weight: 800;
+    -fx-background-radius: 22;
+    -fx-padding: 10 18;
+    -fx-effect: dropshadow(gaussian, rgba(10,103,255,0.22), 12, 0, 0, 6);
+}
+
+/* placeholder styling */
+.text-field:focused {
+    -fx-prompt-text-fill: derive(-fx-text-fill, -30%);
+}
+
+/* ---------- Theme bubble style for equality ---------- */
+#themeBubbleParent,
+.sidebar-bubble.theme-toggle-bubble {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, rgba(255,255,255,0.88), rgba(245,251,255,0.94));
+    -fx-background-radius: 16;
+    -fx-padding: 8 12;
+    -fx-spacing: 8;
+}
+
+/* small right indicator pill inside theme bubble */
+.theme-indicator {
+    -fx-pref-width: 36;
+    -fx-pref-height: 20;
+    -fx-background-radius: 10;
+    -fx-background-color: rgba(10,103,255,0.08);
+    -fx-border-color: rgba(10,103,255,0.14);
+}
+
+/* active theme bubble */
+#themeBubbleParent.theme-active,
+.sidebar-bubble.theme-toggle-bubble.theme-active {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, rgba(10,103,255,0.08), rgba(20,120,230,0.03));
+}
+
+#themeBubbleParent.theme-active .theme-indicator,
+.theme-toggle-bubble.theme-active .theme-indicator {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, rgba(43,199,217,0.18), rgba(10,103,255,0.12));
+    -fx-border-color: transparent;
+}
+
+/* ---------- Dark mode (apply by adding 'dark-mode' class to #mainContainer) ---------- */
+
+/* ---------- Dark-mode fixes for ScrollPane / content ---------- */
+#mainContainer.dark-mode .chat-panel {
+    /* already present but reinforce a dark surface */
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, rgba(7,18,30,0.86), rgba(6,14,26,0.9));
+}
+
+/* make the ScrollPane itself transparent in dark mode */
+#mainContainer.dark-mode .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+/* viewport is the inner area that often shows white — make it transparent */
+#mainContainer.dark-mode .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* the VBox / content inside the ScrollPane */
+#mainContainer.dark-mode .content-column,
+#mainContainer.dark-mode #contentVBox {
+    -fx-background-color: transparent;
+}
+
+/* if your scroll content has padding region or extra panes, keep them transparent too */
+#mainContainer.dark-mode .scroll-pane > .corner,
+#mainContainer.dark-mode .scroll-pane > .content {
+    -fx-background-color: transparent;
+}
+
+
+#mainContainer.dark-mode {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #07192B, #072236);
+}
+
+#mainContainer.dark-mode .sidebar-box {
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, rgba(6,20,35,0.9), rgba(7,34,54,0.85));
+    -fx-border-color: rgba(43,199,217,0.06);
+}
+
+#mainContainer.dark-mode .sidebar-title,
+#mainContainer.dark-mode .sidebar-label {
+    -fx-text-fill: #CFEFF6;
+}
+
+#mainContainer.dark-mode .sidebar-bubble {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, rgba(10,20,35,0.7), rgba(10,30,50,0.55));
+}
+
+#mainContainer.dark-mode .chat-panel {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, rgba(7,18,30,0.86), rgba(6,14,26,0.9));
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 16, 0, 0, 8);
+}
+
+#mainContainer.dark-mode .bubble-user {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #2BC7D9, #0A67FF);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(5,80,140,0.18), 8, 0, 0, 6);
+}
+
+#mainContainer.dark-mode .bubble-bot {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, rgba(10,20,30,0.6), rgba(10,25,40,0.7));
+    -fx-text-fill: #DDEFF6;
+}
+
+#mainContainer.dark-mode .text-field {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-text-fill: #DCEFF7;
+}
+
+
+
+/* ---------- Small helpers ---------- */
+.label-muted {
+    -fx-text-fill: #8FAAC5;
+}
+
+.small-info {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7F9FB8;
+}

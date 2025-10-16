@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainContainer"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.farzan.MainController">
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox fx:id="sidebar" spacing="18" alignment="TOP_CENTER" prefWidth="160" styleClass="sidebar-box">
+            <padding>
+                <Insets top="18" right="8" bottom="18" left="12"/>
+            </padding>
+
+            <Label text="ALICE" styleClass="sidebar-title" />
+
+            <!-- bubble group -->
+            <VBox spacing="12" alignment="TOP_CENTER" styleClass="sidebar-bubble-group">
+
+                <!-- Chat bubble-button -->
+                <HBox alignment="CENTER_LEFT" styleClass="sidebar-bubble" onMouseClicked="#onChatClicked">
+                    <Label text="💬" styleClass="sidebar-icon"/>
+                    <Label text="Chat" styleClass="sidebar-label"/>
+                </HBox>
+
+                <!-- History bubble-button -->
+                <HBox alignment="CENTER_LEFT" styleClass="sidebar-bubble" onMouseClicked="#onHistoryClicked">
+                    <Label text="📜" styleClass="sidebar-icon"/>
+                    <Label text="History" styleClass="sidebar-label"/>
+                </HBox>
+
+                <!-- Theme bubble-button (same style as Chat/History) -->
+                <HBox fx:id="themeBubbleParent"
+                      alignment="CENTER_LEFT"
+                      styleClass="sidebar-bubble theme-toggle-bubble"
+                      onMouseClicked="#onThemeBubbleClicked">
+                    <Label text="🌗" styleClass="sidebar-icon"/>
+                    <Label text="Theme" styleClass="sidebar-label"/>
+                </HBox>
+
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+            <!-- small footer -->
+            <Label text="v0.1 Experimental" styleClass="sidebar-footer"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER: content area with two stacked panes (chat + history) -->
+    <center>
+        <VBox spacing="12" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="12" right="18" bottom="12" left="18"/>
+            </padding>
+
+            <StackPane fx:id="centerStack" VBox.vgrow="ALWAYS">
+
+                <!-- Chat panel -->
+                <VBox fx:id="chatPane" spacing="12" alignment="TOP_CENTER" styleClass="chat-panel" VBox.vgrow="ALWAYS">
+                    <ScrollPane fx:id="scrollPane" fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color:transparent;">
+                        <VBox fx:id="contentVBox" spacing="10" styleClass="content-column"/>
+                    </ScrollPane>
+
+                    <HBox spacing="12" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                        <TextField fx:id="inputField" promptText="Ask anything — try: 'Hello' or 'Summarize my notes'..." HBox.hgrow="ALWAYS" styleClass="text-field"/>
+                        <Button fx:id="sendButton" text="Send" styleClass="send-button" onAction="#onSend"/>
+                    </HBox>
+                </VBox>
+
+                <!-- History panel (hidden by default) -->
+                <VBox fx:id="historyPane" spacing="10" alignment="TOP_LEFT" style="-fx-background-color:transparent;" visible="false" managed="false" VBox.vgrow="ALWAYS">
+                    <Label text="Conversation History" styleClass="history-title"/>
+                    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                        <VBox fx:id="historyList" spacing="8">
+                            <padding>
+                                <Insets top="8.0" right="8.0" bottom="8.0" left="8.0"/>
+                            </padding>
+                        </VBox>
+                    </ScrollPane>
+                </VBox>
+
+            </StackPane>
+        </VBox>
+    </center>
+</BorderPane>
