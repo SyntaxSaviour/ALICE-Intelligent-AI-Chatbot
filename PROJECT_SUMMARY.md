@@ -9,6 +9,7 @@ This document summarizes all the work done to integrate the frontend and backend
 - Created environment setup scripts ([setenv.bat](setenv.bat)) to make Maven easily accessible
 - Updated project configuration to work with Java 23
 
+
 ### 2. Frontend-Backend Integration
 - Created a unified [ChatService.java](chatbot-ui/chatbot-ui/src/main/java/com/farzan/ChatService.java) that combines functionality from separate backend components
 - Modified [MainController.java](chatbot-ui/chatbot-ui/src/main/java/com/farzan/MainController.java) to use the new service instead of mock responses
