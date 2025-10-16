@@ -9,6 +9,7 @@ When the chat window was maximized, the chat area remained small because:
 2. The CSS had a fixed width for the content column
 3. Message bubbles had fixed maximum widths
 
+
 ## Solution
 
 ### 1. FXML Changes ([main.fxml](chatbot-ui/chatbot-ui/src/main/resources/ui/main.fxml))
