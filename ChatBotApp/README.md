@@ -15,6 +15,7 @@ Download the MySQL JDBC driver (mysql-connector-java-x.x.x.jar) and place it in 
 
 #### Compile the Application
 
+
 ```bash
 javac -cp "lib/*" -d out src/*.java
 ```
