@@ -24,6 +24,7 @@ chatbot-ui/
 
 ## Prerequisites
 
+
 1. **Java 25** or higher
 2. **Maven** for dependency management
 3. **MySQL** database server
